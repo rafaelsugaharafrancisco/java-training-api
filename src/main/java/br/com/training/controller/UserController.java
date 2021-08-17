@@ -30,6 +30,7 @@ public class UserController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public UserResponse createUser(@RequestBody @Valid UserForm form) {
+
 		return service.save(form);
 	}
 

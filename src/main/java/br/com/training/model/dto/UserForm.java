@@ -1,11 +1,18 @@
 package br.com.training.model.dto;
 
+
 import java.time.LocalDate;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import br.com.training.model.User;
 
+
 public class UserForm {
-	
+
+	@NotEmpty
+	@NotNull(message = "Campo name obrigatório")
 	private String name;
 	private String email;
 	private String cpf;

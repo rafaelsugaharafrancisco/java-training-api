@@ -45,7 +45,7 @@ public class UserService {
 		return toUserResponse(user);
 	}
 	
-	public UserResponse toUserResponse(User user) {
+	private UserResponse toUserResponse(User user) {
 		UserResponse response = new UserResponse();
 		response.setId(user.getId());
 		response.setName(user.getName());
