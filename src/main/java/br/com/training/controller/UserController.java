@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.com.training.model.User;
 import br.com.training.model.dto.UserForm;
 import br.com.training.model.dto.UserResponse;
 import br.com.training.service.UserService;
@@ -36,7 +35,7 @@ public class UserController {
 
 	@GetMapping (value = "/{cpf}")
 	@ResponseStatus(HttpStatus.OK)
-    public User getUser (@PathVariable String cpf){
+    public UserResponse getUser (@PathVariable String cpf){
         return service.findByCpf(cpf);
     }
 	
