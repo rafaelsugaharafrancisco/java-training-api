@@ -15,13 +15,14 @@ public class UserService {
 	private UserRepository repository;
 	
 	public UserResponse save(UserForm form) {
-		User user = repository.save(form.toUser());
+
+		User user = repository.save(form.toUserCreate());
 		
-		return toUserResponse(user);
+		return new UserResponse(user);
 	}
 	
 	public UserResponse findByCpf(String cpf) {
-		return toUserResponse(repository.findByCpf(cpf));
+		return new UserResponse((repository.findByCpf(cpf)));
 	}
 
 	public void delete(String cpf) {
@@ -34,26 +35,11 @@ public class UserService {
 	public UserResponse update(String cpf, UserForm form) {			
 		User user = repository.findByCpf(cpf);
 		if (user != null) {
-			user.setName(form.getName());
-			user.setEmail(form.getEmail());
-			user.setCpf(form.getCpf());
-			user.setBirthDate(form.getBirthDate());
 			
-			repository.save(user);
+			repository.save(form.toUserUpdate(user.getId()));
 		}
 		
-		return toUserResponse(user);
-	}
-	
-	private UserResponse toUserResponse(User user) {
-		UserResponse response = new UserResponse();
-		response.setId(user.getId());
-		response.setName(user.getName());
-		response.setEmail(user.getEmail());
-		response.setCpf(user.getCpf());
-		response.setBirthDate(user.getBirthDate());
-		
-		return response;
+		return new UserResponse(user);
 	}
 
 }

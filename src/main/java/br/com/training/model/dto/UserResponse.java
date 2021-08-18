@@ -2,6 +2,8 @@ package br.com.training.model.dto;
 
 import java.time.LocalDate;
 
+import br.com.training.model.User;
+
 public class UserResponse {
 	
 	private Long id;
@@ -10,13 +12,13 @@ public class UserResponse {
 	private String cpf;
 	private LocalDate birthDate;
 	
-//	public UserResponse(Long id, String name, String email, String cpf, LocalDate birthDate) {
-//		this.id = id;
-//		this.name = name;
-//		this.email = email;
-//		this.cpf = cpf;
-//		this.birthDate = birthDate;
-//	}
+	public UserResponse(User user) {
+		this.id = user.getId();
+		this.name = user.getName();
+		this.email = user.getEmail();
+		this.cpf = user.getCpf();
+		this.birthDate = user.getBirthDate();
+	}
 	
 	public Long getId() {
 		return id;

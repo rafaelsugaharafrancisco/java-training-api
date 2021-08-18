@@ -35,15 +35,20 @@ public class User implements Serializable {
 	@Column(nullable = false)
 	private LocalDate birthDate;
 
-	@Deprecated
-	public User() {}
-	
-	public User(String name, String email, String cpf, LocalDate birthDate) {
-		this.name = name;
-		this.email = email;
-		this.cpf = cpf;
-		this.birthDate = birthDate;
-	}
+//	@Deprecated
+//	public User() {}
+//	
+//	public User(String name, String email, String cpf, LocalDate birthDate) {
+//		this.name = name;
+//		this.email = email;
+//		this.cpf = cpf;
+//		this.birthDate = birthDate;
+//	}
+//	
+//	public User(Long id, String name, String email, String cpf, LocalDate birthDate) {
+//		this(name, email, cpf, birthDate);
+//		this.id = id;
+//	}
 
 	@Component
 	public class LocalDateSpringConverter implements Converter<String, LocalDate> {
@@ -52,6 +57,7 @@ public class User implements Serializable {
 		public LocalDate convert(String value) {
 			if (value != null) {
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				System.out.println(LocalDate.parse(value, formatter));
 				return LocalDate.parse(value, formatter);
 			} else {
 				return null;
