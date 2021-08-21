@@ -16,7 +16,7 @@ public class UserService {
 	
 	public UserResponse save(UserForm form) {
 
-		User user = repository.save(form.toUserCreate());
+		User user = repository.save(new User(form.getName(), form.getEmail(), form.getCpf(), form.getBirthDate()));
 		
 		return new UserResponse(user);
 	}
@@ -34,9 +34,14 @@ public class UserService {
 
 	public UserResponse update(String cpf, UserForm form) {			
 		User user = repository.findByCpf(cpf);
+		
 		if (user != null) {
+			user.setName(form.getName());
+			user.setEmail(form.getEmail());
+			user.setCpf(form.getCpf());
+			user.setBirthDate(form.getBirthDate());
 			
-			repository.save(form.toUserUpdate(user.getId()));
+			repository.save(user);
 		}
 		
 		return new UserResponse(user);

@@ -35,20 +35,20 @@ public class User implements Serializable {
 	@Column(nullable = false)
 	private LocalDate birthDate;
 
-//	@Deprecated
-//	public User() {}
-//	
-//	public User(String name, String email, String cpf, LocalDate birthDate) {
-//		this.name = name;
-//		this.email = email;
-//		this.cpf = cpf;
-//		this.birthDate = birthDate;
-//	}
-//	
-//	public User(Long id, String name, String email, String cpf, LocalDate birthDate) {
-//		this(name, email, cpf, birthDate);
-//		this.id = id;
-//	}
+	@Deprecated
+	public User() {}
+	
+	public User(String name, String email, String cpf, LocalDate birthDate) {
+		this.name = name;
+		this.email = email;
+		this.cpf = cpf;
+		this.birthDate = birthDate;
+	}
+	
+	public User(Long id, String name, String email, String cpf, LocalDate birthDate) {
+		this(name, email, cpf, birthDate);
+		this.id = id;
+	}
 
 	@Component
 	public class LocalDateSpringConverter implements Converter<String, LocalDate> {

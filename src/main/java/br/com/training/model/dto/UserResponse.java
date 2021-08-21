@@ -6,26 +6,18 @@ import br.com.training.model.User;
 
 public class UserResponse {
 	
-	private Long id;
 	private String name;
 	private String email;
 	private String cpf;
 	private LocalDate birthDate;
 	
 	public UserResponse(User user) {
-		this.id = user.getId();
 		this.name = user.getName();
 		this.email = user.getEmail();
 		this.cpf = user.getCpf();
 		this.birthDate = user.getBirthDate();
 	}
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
