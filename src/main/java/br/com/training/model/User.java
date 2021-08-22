@@ -35,7 +35,6 @@ public class User implements Serializable {
 	@Column(nullable = false)
 	private LocalDate birthDate;
 
-	@Deprecated
 	public User() {}
 	
 	public User(String name, String email, String cpf, LocalDate birthDate) {

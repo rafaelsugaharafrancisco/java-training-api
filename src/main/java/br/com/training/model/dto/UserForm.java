@@ -11,19 +11,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class UserForm {
 	
-	@NotBlank(message = "Campo name é obrigatório!")
+	@NotBlank(message = "Field name is required!")
 	private String name;
 	
-	@NotBlank(message = "Campo email é obrigatório!")
-	@Email(message = "Campo email invalido! Deve conter o simbolo @")
+	@NotBlank(message = "Field email is required!")
+	@Email(message = "Fiedl email is invalid!")
 	private String email;
 	
-	@NotBlank(message = "Campo cpf é obrigatório!")
+	@NotBlank(message = "Field cpf is required!")
 	@CPF(message = "CPF é inválido!")
 	private String cpf;
 	
-//	@NotEmpty(message = "Campo birthDate deve ser preenchido")
-//	@NotNull(message = "Campo birthDate é obrigatório!")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate birthDate;
 	
