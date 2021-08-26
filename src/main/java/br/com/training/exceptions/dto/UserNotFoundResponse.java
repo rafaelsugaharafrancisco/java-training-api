@@ -1,4 +1,4 @@
-package br.com.training.validator.dto;
+package br.com.training.exceptions.dto;
 
 public class UserNotFoundResponse {
 	 

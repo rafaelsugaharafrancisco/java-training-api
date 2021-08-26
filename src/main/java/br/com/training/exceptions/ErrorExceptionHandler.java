@@ -1,4 +1,4 @@
-package br.com.training.validator;
+package br.com.training.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +12,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.com.training.exceptions.UserNotFoundException;
-import br.com.training.validator.dto.ErrorFormResponse;
-import br.com.training.validator.dto.ErrorOtherResponse;
-import br.com.training.validator.dto.UserNotFoundResponse;
+import br.com.training.exceptions.dto.ErrorFormResponse;
+import br.com.training.exceptions.dto.ErrorOtherResponse;
+import br.com.training.exceptions.dto.UserNotFoundResponse;
 
 @RestControllerAdvice
 public class ErrorExceptionHandler {

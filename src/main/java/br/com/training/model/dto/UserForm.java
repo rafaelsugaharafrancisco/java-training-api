@@ -15,11 +15,11 @@ public class UserForm {
 	private String name;
 	
 	@NotBlank(message = "Field email is required!")
-	@Email(message = "Fiedl email is invalid!")
+	@Email(message = "Field email is invalid!")
 	private String email;
 	
 	@NotBlank(message = "Field cpf is required!")
-	@CPF(message = "CPF é inválido!")
+	@CPF(message = "cpf is invalid!")
 	private String cpf;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
