@@ -51,7 +51,7 @@ public class ErrorExceptionHandler {
 	}
 	
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(RuntimeException.class)
+	@ExceptionHandler(Exception.class)
 	public ErrorOtherResponse othersErrors(RuntimeException exception) {
 		return new ErrorOtherResponse(exception.getMessage());
 	}
