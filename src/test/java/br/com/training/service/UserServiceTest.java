@@ -24,14 +24,14 @@ public class UserServiceTest {
 	
 	@BeforeAll
 	public void criaUserValido() {
-		User user = new User("Rafael", "rafa.s.francisco@gmail.com", "33293800807", LocalDate.of(2021, 07, 16));
+		User user = new User("Rafael", "rafa.s.francisco@gmail.com", "123456", LocalDate.of(2021, 07, 16));
 		
 		assertNotNull(repository.save(user));
 	}
 	
 	@Test
 	public void pesquisaSeUserExiste() {
-		assertNotNull(repository.findByCpf("33293800807"));
+		assertNotNull(repository.findByCpf("123456"));
 	}
 	
 	@Test
@@ -42,7 +42,7 @@ public class UserServiceTest {
 	@Test
 	public void atualizaUser() {
 		
-		User user = repository.findByCpf("33293800807");
+		User user = repository.findByCpf("123456");
 		user.setBirthDate(LocalDate.of(1984, 07, 16));
 		
 		assertNotNull(repository.save(user));
