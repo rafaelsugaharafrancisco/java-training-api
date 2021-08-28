@@ -35,7 +35,7 @@ public class ErrorExceptionHandler {
 	@ResponseStatus(HttpStatus.CONFLICT)
 	@ExceptionHandler(DataIntegrityViolationException.class)
 	public ErrorOtherResponse duplicated() {
-		return new ErrorOtherResponse("Field(s) name and/or email is/are duplicated!");
+		return new ErrorOtherResponse("Field(s) cpf and/or email is/are duplicated!");
 	}
 	
 	@ResponseStatus(HttpStatus.NOT_FOUND)
