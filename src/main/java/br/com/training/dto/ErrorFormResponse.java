@@ -1,4 +1,4 @@
-package br.com.training.exceptions.dto;
+package br.com.training.dto;
 
 public class ErrorFormResponse {
 	

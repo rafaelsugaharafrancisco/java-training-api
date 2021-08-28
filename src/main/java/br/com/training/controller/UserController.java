@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.com.training.model.dto.UserForm;
-import br.com.training.model.dto.UserResponse;
+import br.com.training.dto.UserForm;
+import br.com.training.dto.UserResponse;
 import br.com.training.service.UserService;
 
 @RestController

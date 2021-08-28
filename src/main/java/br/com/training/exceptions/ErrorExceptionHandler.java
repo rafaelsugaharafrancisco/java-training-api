@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.com.training.exceptions.dto.ErrorFormResponse;
-import br.com.training.exceptions.dto.ErrorOtherResponse;
-import br.com.training.exceptions.dto.UserNotFoundResponse;
+import br.com.training.dto.ErrorFormResponse;
+import br.com.training.dto.ErrorOtherResponse;
+import br.com.training.dto.UserNotFoundResponse;
 
 @RestControllerAdvice
 public class ErrorExceptionHandler {

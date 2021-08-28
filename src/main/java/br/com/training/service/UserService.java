@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import br.com.training.exceptions.UserNotFoundException;
 import br.com.training.model.User;
-import br.com.training.model.dto.UserForm;
-import br.com.training.model.dto.UserResponse;
+import br.com.training.dto.UserForm;
+import br.com.training.dto.UserResponse;
 import br.com.training.repository.UserRepository;
 
 @Service
