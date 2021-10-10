@@ -14,8 +14,13 @@ import br.com.training.repository.UserRepository;
 @Service
 public class UserService {
 	
-	@Autowired
+//	@Autowired
 	private UserRepository repository;
+	
+	@Autowired
+	public UserService(UserRepository repository) {
+		this.repository = repository;
+	}
 	
 	@Transactional
 	public UserResponse save(UserForm form) {
