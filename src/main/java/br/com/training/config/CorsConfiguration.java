@@ -1,4 +1,4 @@
-package br.com.training.security;
+package br.com.training.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -11,6 +11,6 @@ public class CorsConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**").allowedMethods("GET", "POST", "PUT");
+		registry.addMapping("/**").allowedMethods("GET", "POST", "PUT", "DELETE");
 	}
 }
